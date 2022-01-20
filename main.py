@@ -1,37 +1,21 @@
 from time import monotonic
 from tkinter import *
 
-#Creating object 'root' of Tk()
 root = Tk()
 
-#Providing Geometry to the form
 root.geometry("500x500")
 
-#Providing title to the form
 root.title('🪐Planetary weight calculator')
 
-#this creates 'Label' widget for Registration Form and uses place() method.
 label_0 = Label(root,text="🪐Planetary weight calculator", width=20,font=("bold",20))
-#place method in tkinter is  geometry manager it is used to organize widgets by placing them in specific position
 label_0.place(x=80,y=60)
 
-#this creates 'Label' widget for Fullname and uses place() method.
 label_1 = Label(root,text="Enter your weight on earth🌏:", width=20,font=("bold",15))
 label_1.place(x=100,y=100)
 
 earth_weight = StringVar(root)
-#this will accept the input string text from the user.
-entry_1=Entry(root, textvariable=earth_weight)
-entry_1.place(x=110,y=130)
-
-#the variable 'var' mentioned here holds Integer Value, by deault 0
-var=IntVar()
-
-#the variable 'var1' mentioned here holds Integer Value, by default 0
-var1=IntVar()
-
-#the variable 'var2' mentioned here holds Integer Value, by default 0
-var2=IntVar()
+weight_input=Entry(root, textvariable=earth_weight)
+weight_input.place(x=110,y=130)
 
 mars = Label(root,text="", width=20,font=("bold",15))
 mars.place(x=100,y=200)
@@ -62,9 +46,6 @@ def onclick():
   neptune["text"] = "Weight on Neptune: {} kg".format(round(earth_weight_float*11.15/9.8, 2))
 
 
-#this creates button for submitting the details provides by the user
 Button(root, text='Submit' , width=20,bg="black",fg='black',command=onclick).place(x=100,y=160)
 
-
-#this will run the mainloop.
 root.mainloop()
